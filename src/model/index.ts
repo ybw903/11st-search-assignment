@@ -7,6 +7,7 @@ export default class Model {
     constructor() {
         cem.subscribe('itemcreate', (this.createItem.bind(this)) as EventListenerOrEventListenerObject);
         cem.subscribe('statechange',(this.getModel.bind(this)) as EventListenerOrEventListenerObject);
+        cem.subscribe('itemdelete',(this.deleteItem.bind(this)) as EventListenerOrEventListenerObject);
     }
 
     getModel(e: CustomEvent) {
@@ -28,7 +29,16 @@ export default class Model {
             this.store.memos.push(itemData);
             localStorage.saveModel('memo', this.store.memos);
         }
-        console.log(this.store);
         cem.fire('storeupdated',{store: this.store, path: path})
+    }
+
+    
+    deleteItem(e:CustomEvent) {
+        const {itemIdx,path} = e.detail;
+        if(this.store.alarms) {
+            this.store.alarms.splice(itemIdx ,1);
+            localStorage.saveModel('alarm', this.store.alarms);
+            cem.fire('storeupdated', {store: this.store, path: path});
+        }
     }
 }

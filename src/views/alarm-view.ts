@@ -37,7 +37,6 @@ export default class AlarmView {
     }
 
     deleteButtonClickHandler(e:MouseEvent,target:HTMLElement) {
-        console.log(target);
         const alarmCard = target.closest('.alarm-card');
         if(!alarmCard) return;
         e.stopImmediatePropagation();
@@ -47,7 +46,6 @@ export default class AlarmView {
             itemIdx,
             path: history.state.path
         })
-        
     }
 
     render() {

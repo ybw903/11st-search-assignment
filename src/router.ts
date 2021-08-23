@@ -1,6 +1,6 @@
 import Alarm from './views/alarm-view';
 import CreateItem from './componets/create-item';
-import Header from './views/header';
+import Header from './componets/header';
 import Home from './views/home-view';
 import Memo from './views/memo-view';
 import Photo from './views/photo-view';
