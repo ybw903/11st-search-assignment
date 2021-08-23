@@ -15,8 +15,12 @@ export default class Router {
         new CreateItem();
 
         window.addEventListener('popstate', (event) => {
-            if(event.state === null)
-                return;
+            if(event.state === null) {
+                cem.fire('statechange', {
+                    path: '/',
+                    isReplace: true
+                })
+            }
             cem.fire('statechange', event.state);
         });
         
