@@ -1,5 +1,5 @@
 import cem from '../../custom-event';
-
+import './style.css';
 export default class Header {
 
     path:string | undefined;

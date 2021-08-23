@@ -1,4 +1,5 @@
 import cem from '../../custom-event';
+import './style.css';
 export default class HomeView {
     constructor() {
         cem.subscribe('storeupdated',((e: CustomEvent) => {
@@ -35,11 +36,16 @@ export default class HomeView {
         const content = document.querySelector('.content') as HTMLElement;
         content.innerHTML = `
             <div class="home">
-                Home
-                <div>
-                    <a href="/alarm">알람</a>
-                    <a href="/memo">메모</a>
-                    <a href="/photo">사진</a>
+                <div class='app-container'>
+                    <div class = 'app-button'> 
+                        <a href="/alarm">알람</a>
+                    </div>
+                    <div class = 'app-button'> 
+                        <a href="/memo">메모</a>
+                    </div>
+                    <div class = 'app-button'> 
+                        <a href="/photo">사진</a>
+                    </div>
                 </div>
             </div>
         `

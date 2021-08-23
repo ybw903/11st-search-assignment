@@ -1,4 +1,5 @@
 import cem from '../../custom-event';
+import './style.css';
 export default class CreateItem {
 
     isClosing: boolean = false;

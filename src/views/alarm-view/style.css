@@ -1,0 +1,33 @@
+.home {
+    width: 100%;
+}
+
+.app-button {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: lightslategrey;
+    text-align: center;
+    line-height: 60px;
+    transition: all 700ms ease;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: calc(100vh - 40px);
+    justify-content: center;
+    align-items: center;
+}
+
+.dragging {
+    transform: scale(0.9);
+}
+
+.invisible {
+    opacity: 0;
+    transition: all 100ms ease;
+
+}

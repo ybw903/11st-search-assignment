@@ -1,5 +1,6 @@
 import cem from '../../custom-event';
 import imgs from '../../images/index';
+import './style.css';
 export default class PhotoView {
     constructor() {
         cem.subscribe('storeupdated',((e:CustomEvent)=> {

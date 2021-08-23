@@ -1,5 +1,6 @@
 import { Alarm } from '@/types';
 import cem from '../../custom-event';
+import './style.css';
 export default class AlarmView {
 
     alarms: Alarm[] = [];
