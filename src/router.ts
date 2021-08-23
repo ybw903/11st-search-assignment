@@ -1,11 +1,12 @@
 import Alarm from './components/alarm';
+import Header from './components/header';
 import Home from './components/home';
 import Memo from './components/memo';
 import Photo from './components/photo';
 import cem from './custom-event';
 export default class Router {
     constructor() {
-
+        new Header();
         new Home();
         new Alarm();
         new Photo();
