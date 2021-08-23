@@ -7,6 +7,11 @@ a {
     color: black;
 }
 
+button {
+    border-radius: 10px;
+    background-color: none;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -22,7 +27,7 @@ a {
     scroll-behavior: smooth;
     color: #333;
     background-color: #ccc;
-    opacity: 0.75;
+    opacity: 0.9;
 }
 
 .content {
@@ -31,3 +36,4 @@ a {
     align-items: center;
     width: 100%;
 }
+

@@ -39,35 +39,37 @@ export default class CreateItem {
         const newAlarm = document.createElement('div');
         newAlarm.classList.add('input');
         newAlarm.innerHTML = `
-                <select id="meridiem">
-                    <option value="오전">오전</option>
-                    <option value="오후">오후</option>
-                </select>
-                <select id="hour">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-                시
-                <select id="minute">
-                    <option value="00">00</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
-                </select>
-                분
-                <button class='save'>저장</button>
+                <div class='input'>
+                    <select id="meridiem">
+                        <option value="오전">오전</option>
+                        <option value="오후">오후</option>
+                    </select>
+                    <select id="hour">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    시
+                    <select id="minute">
+                        <option value="00">00</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    분
+                    <button class='save'>저장</button>
+                </div>
         `
         return newAlarm;
     }
@@ -104,7 +106,6 @@ export default class CreateItem {
             itemData,
             path: this.path
         })
-            
     }
 
     closeInput() {
