@@ -1,9 +1,9 @@
-import Alarm from './components/alarm';
-import CreateItem from './components/create-item';
-import Header from './components/header';
-import Home from './components/home';
-import Memo from './components/memo';
-import Photo from './components/photo';
+import Alarm from './views/alarm-view';
+import CreateItem from './componets/create-item';
+import Header from './componets/header';
+import Home from './views/home-view';
+import Memo from './views/memo-view';
+import Photo from './views/photo-view';
 import cem from './custom-event';
 export default class Router {
     constructor() {

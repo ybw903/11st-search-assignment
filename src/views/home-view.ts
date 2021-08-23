@@ -1,5 +1,5 @@
 import cem from '../custom-event';
-export default class Home {
+export default class HomeView {
     constructor() {
         cem.subscribe('storeupdated',((e: CustomEvent) => {
             if(e.detail.path !== '/') return;

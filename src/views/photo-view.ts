@@ -1,17 +1,16 @@
 import cem from '../custom-event';
-export default class Alarm {
+export default class PhotoView {
     constructor() {
         cem.subscribe('storeupdated',((e: CustomEvent) => {
-            if(e.detail.path !== '/alarm') return;
+            if(e.detail.path !== '/photo') return;
             this.render();
         })as EventListenerOrEventListenerObject)
     }
-
     render() {
         const content = document.querySelector('.content') as HTMLElement;
         content.innerHTML = `
             <div>
-                Alarm
+                Photo
             </div>
         `
     }
