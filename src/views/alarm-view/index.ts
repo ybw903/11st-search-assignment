@@ -38,7 +38,7 @@ export default class AlarmView {
     }
 
     deleteButtonClickHandler(e:MouseEvent,target:HTMLElement) {
-        const alarmCard = target.closest('.alarm-card');
+        const alarmCard = target.closest('.delete-button');
         if(!alarmCard) return;
         e.stopImmediatePropagation();
 
