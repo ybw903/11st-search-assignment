@@ -14,10 +14,10 @@ export default class PhotoView {
     makeSlider() {
         return `
             <div class='slider'>
-                ${imgs.reduce((a,b) => {  
-                    console.log(b);
+                ${imgs.reduce((a,b,i) => {  
+                    
                     return a + `
-                    <img class="slider-img src="${b}" alt="${b}">
+                    <img class="slider-img ${i===0? 'selected':''}" src="${b}" alt="${b}">
                 `},'')}
             </div>
         `
@@ -55,7 +55,7 @@ export default class PhotoView {
             <div class = 'photo'>
                 ${this.makeSlider()}
                 <div class='img-wrapper'>
-                    <img  src="./img/1.jpg"/>
+                    <img  src="${imgs[0]}" alt="${imgs[0]}"/>
                 </div>
             </div>
         `

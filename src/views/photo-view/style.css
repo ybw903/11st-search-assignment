@@ -24,7 +24,7 @@
     display: none; /* Chrome, Safari, Opera*/
 }
 
-.carousel img {
+.slider-img {
     min-width: 147px;
     max-width: 147px;
     height: 200px;
@@ -37,7 +37,7 @@
     z-index: 2;
 }
 
-.carousel img:hover {
+.slider img:hover {
     transform : scale(1.1);
     z-index: 4;
 }
@@ -57,4 +57,5 @@
 
 .img-wrapper img {
     width: 100%;
+    max-height: calc(100vh - (250px + 40px));
 }
