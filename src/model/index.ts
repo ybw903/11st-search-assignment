@@ -11,7 +11,7 @@ export default class Model {
 
     getModel(e: CustomEvent) {
         const {path} = e.detail;
-        this.store.apps = localStorage.getModel('app');
+        this.store.apps = localStorage.getModel('app') ;
         this.store.alarms = localStorage.getModel('alarm');
         this.store.memos = localStorage.getModel('memo');
         cem.fire('storeupdated', {store: this.store, path: path});
@@ -28,7 +28,7 @@ export default class Model {
             this.store.memos.push(itemData);
             localStorage.saveModel('memo', this.store.memos);
         }
-
+        console.log(this.store);
         cem.fire('storeupdated',{store: this.store, path: path})
     }
 }

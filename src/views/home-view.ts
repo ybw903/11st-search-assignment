@@ -5,7 +5,7 @@ export default class HomeView {
             if(e.detail.path !== '/') return;
             this.render();
             const home = document.querySelector('.home') as HTMLElement;
-            home?.addEventListener('click', this.clickEventHandler.bind(this));
+            home.addEventListener('click', this.clickEventHandler.bind(this));
             
         })as EventListenerOrEventListenerObject)
     }
