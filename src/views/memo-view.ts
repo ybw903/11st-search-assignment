@@ -7,7 +7,7 @@ export default class MemoView {
     constructor() {
         cem.subscribe('storeupdated',((e: CustomEvent) => {
             if(e.detail.path !== '/memo') return;
-            this.setAttributes(e.detail.store);
+            this.setAttributes(e.detail.store.memos);
             this.render();
         })as EventListenerOrEventListenerObject)
     }

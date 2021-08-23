@@ -11,21 +11,24 @@ export default class Model {
 
     getModel(e: CustomEvent) {
         const {path} = e.detail;
-        const modelName = path.substring(1)||'apps';
-        const model = localStorage.getModel(modelName);
-        cem.fire('storeupdated', {store: model, path: path});
+        this.store.apps = localStorage.getModel('app');
+        this.store.alarms = localStorage.getModel('alarm');
+        this.store.memos = localStorage.getModel('memo');
+        cem.fire('storeupdated', {store: this.store, path: path});
     }
 
     createItem(e:CustomEvent) {
         const {itemData, path} = e.detail;
-        const modelName = path.substring(1);
+
         if(path === '/alarm' &&this.store.alarms) {
             this.store.alarms.push(itemData);
-            localStorage.saveModel(modelName, this.store.alarms);
+            localStorage.saveModel('alarm', this.store.alarms);
         } 
-        else if(path === '/moemos' &&this.store.memos){
+        else if(path === '/memo' &&this.store.memos){
             this.store.memos.push(itemData);
-            localStorage.saveModel(modelName, this.store.memos);
+            localStorage.saveModel('memo', this.store.memos);
         }
+
+        cem.fire('storeupdated',{store: this.store, path: path})
     }
 }

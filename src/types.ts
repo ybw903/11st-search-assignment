@@ -5,8 +5,8 @@ export interface Store {
 }
 
 export interface App {
-    name: string
     path: string
+    name: string
 }
 
 export interface Alarm {
