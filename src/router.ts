@@ -14,7 +14,7 @@ export default class Router {
         window.addEventListener('popstate', (event) => {
             if(event.state === null)
                 return;
-            cem.fire('statepop', event.state);
+            cem.fire('statechange', event.state);
         });
         
         cem.subscribe('statechange', ((event: CustomEvent) =>
