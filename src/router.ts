@@ -1,4 +1,5 @@
 import Alarm from './components/alarm';
+import CreateItem from './components/create-item';
 import Header from './components/header';
 import Home from './components/home';
 import Memo from './components/memo';
@@ -11,6 +12,7 @@ export default class Router {
         new Alarm();
         new Photo();
         new Memo();
+        new CreateItem();
 
         window.addEventListener('popstate', (event) => {
             if(event.state === null)

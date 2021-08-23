@@ -5,17 +5,47 @@ export default class Header {
     path:string | undefined;
 
     constructor() {
+        const header = document.querySelector('header') as HTMLElement;
+        header.addEventListener('click', this.clickEventHandler.bind(this));
+
         this.render();
+        this.clock();
+
         cem.subscribe('statechange',((e: CustomEvent) => {
             this.setAttributes(e.detail.path);
             this.backButtonToggle();
             this.newButtonToggle();
         })as EventListenerOrEventListenerObject)
-        this.clock();
+
     }
 
     setAttributes(path: string) {
         this.path = path;
+    }
+
+    clickEventHandler(e:MouseEvent) {
+        e.preventDefault();
+        const {target} = e;
+        if(!(target instanceof HTMLElement))
+            return;
+        this.backButtonClickHandler(target);
+        this.newButtonClickHandler(e,target);
+    }
+
+    backButtonClickHandler(target: HTMLElement) {
+        const backButton = target.closest('.back-button');
+        if(!backButton)
+            return;
+        history.back();
+    }
+
+    newButtonClickHandler(e:MouseEvent, target: HTMLElement) {
+        const newButton = target.closest('.new-button');
+        if(!newButton)
+        e.stopImmediatePropagation();
+        cem.fire('iteminputcreate',{
+            path: this.path
+        });
     }
 
     clock() {
