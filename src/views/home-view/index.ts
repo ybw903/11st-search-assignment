@@ -25,9 +25,12 @@ export default class HomeView {
     }
 
     appClickHandler(target: HTMLElement): void {
-        const a = target.closest('a');
-        if(!a) 
+        const app = target.closest('.app-button')
+        if(!app)
             return;
+
+        const a = target.closest('a')??app.firstElementChild as HTMLElement;
+        console.log(a);
         const path = this.getPathFromLink(a);
         cem.fire('statechange', Object.assign({},history.state, {path}));
     }
