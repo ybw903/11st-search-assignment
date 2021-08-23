@@ -10,7 +10,9 @@ npm run prod
 ```
 
 ## 모듈 구조
+```bash
 ├── src/                          - 프로젝트 폴더
+│   │   
 │   ├── components/               - 컴포넌트 폴더
 │   │   ├── create-item/          - 메모,알람 input 컴포넌트 폴더
 │   │   │   ├── index.ts      
@@ -49,6 +51,7 @@ npm run prod
 ├── router.ts                     - 각 앱화면 생성 및 페이지 이동 이벤트 핸들링
 ├── style.css                     
 └── types.ts                      - 프로젝트에 사용할 커스텀 타입들을 모아둔 파일
+```
 
 ## 미구현 기능
 **[홈]**
