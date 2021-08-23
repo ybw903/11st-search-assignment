@@ -42,6 +42,7 @@ export default class Header {
     newButtonClickHandler(e:MouseEvent, target: HTMLElement) {
         const newButton = target.closest('.new-button');
         if(!newButton)
+            return;
         e.stopImmediatePropagation();
         cem.fire('iteminputcreate',{
             path: this.path
