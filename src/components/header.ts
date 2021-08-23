@@ -11,7 +11,7 @@ export default class Header {
         this.render();
         this.clock();
 
-        cem.subscribe('statechange',((e: CustomEvent) => {
+        cem.subscribe('storeupdated',((e: CustomEvent) => {
             this.setAttributes(e.detail.path);
             this.backButtonToggle();
             this.newButtonToggle();

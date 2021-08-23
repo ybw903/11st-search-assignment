@@ -1,4 +1,6 @@
 export function getModel(key:string) {
+    if(!localStorage.getItem(key))
+        return [];
     return JSON.parse(localStorage.getItem(key)??'');
 }
 

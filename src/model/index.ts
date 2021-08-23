@@ -12,7 +12,7 @@ export default class Model {
     getModel(e: CustomEvent) {
         const {path} = e.detail;
         const modelName = path.substring(1)||'apps';
-        const model = localStorage.getModel(modelName) || [];
+        const model = localStorage.getModel(modelName);
         cem.fire('storeupdated', {store: model, path: path});
     }
 

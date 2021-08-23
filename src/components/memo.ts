@@ -1,7 +1,7 @@
 import cem from '../custom-event';
 export default class Memo {
     constructor() {
-        cem.subscribe('statechange',((e: CustomEvent) => {
+        cem.subscribe('storeupdated',((e: CustomEvent) => {
             if(e.detail.path !== '/memo') return;
             this.render();
         })as EventListenerOrEventListenerObject)

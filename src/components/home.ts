@@ -1,7 +1,7 @@
 import cem from '../custom-event';
 export default class Home {
     constructor() {
-        cem.subscribe('statechange',((e: CustomEvent) => {
+        cem.subscribe('storeupdated',((e: CustomEvent) => {
             if(e.detail.path !== '/') return;
             this.render();
             const home = document.querySelector('.home') as HTMLElement;
