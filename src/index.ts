@@ -1,6 +1,7 @@
 import Router from "./router";
 import cem from "./custom-event";
 import Model from "./model";
+import alarmCheck from './utils/alarm';
 import './style.css';
 
 new Router();
@@ -12,3 +13,6 @@ cem.fire(
         isReplace: true
     }
 )
+
+setInterval(alarmCheck, 1000);
+
