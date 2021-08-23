@@ -1,4 +1,4 @@
-import cem from '../custom-event';
+import cem from '../../custom-event';
 export default class HomeView {
     constructor() {
         cem.subscribe('storeupdated',((e: CustomEvent) => {

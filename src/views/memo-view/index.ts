@@ -1,5 +1,5 @@
 import { Memo } from '@/types';
-import cem from '../custom-event';
+import cem from '../../custom-event';
 export default class MemoView {
 
     memos: Memo[] = [];
